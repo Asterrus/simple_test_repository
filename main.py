@@ -19,6 +19,7 @@ def on_created(hashMap,_files=None,_data=None):
 
 
 def on_object_detected(hashMap,_files=None,_data=None):
+
     current_object = hashMap.get('current_object')
     if not current_object:
         hashMap.put('toast', 'no_object')
@@ -36,3 +37,5 @@ def on_object_detected(hashMap,_files=None,_data=None):
             odm.append({'object_id': obj_id, 'mode': "ocr"})
         suClass.setGlobalHashMap('_object_detector_mode', json.dumps(odm))
         hashMap.put('info', str(odm))
+
+
