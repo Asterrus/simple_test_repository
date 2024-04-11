@@ -1,4 +1,4 @@
-def on_created(hashMap,_files=None,_data=None):
+def on_create(hashMap,_files=None,_data=None):
     from ru.travelfood.simple_ui import SimpleUtilites as suClass
     import json
     hashMap.put('CVDetectors', 'barcode')
