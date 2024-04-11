@@ -4,6 +4,7 @@ def on_create(hashMap,_files=None,_data=None):
     hashMap.put('CVDetectors', 'barcode')
     hashMap.put('CVSingleDetector', '')
     hashMap.put('CVSkipNested', '')
+    hashMap.put('UseVisionSettings', '')
     settings = {
         "min_length": 2,
         "max_length": 6,
@@ -11,12 +12,8 @@ def on_create(hashMap,_files=None,_data=None):
         "ToUpcase": False,
         "OnlyNumbers": True
     }
-    hashMap.put("SetVisionSettings", json.dumps(settings))
-    hashMap.put('UseVisionSettings', '')
     suClass.setGlobalHashMap('_object_detector_mode', '[]')
-    print('Успешно установили настройки!!!')
-    print('Успешно установили настройки!!!')
-    print('Успешно установили настройки!!!')
+    hashMap.put("SetVisionSettings", json.dumps(settings))
     print('Успешно установили настройки!!!')
     return hashMap
 
@@ -42,10 +39,8 @@ def on_object_detected(hashMap,_files=None,_data=None):
         else:
             odm.append({'object_id': obj_id, 'mode': "ocr"})
         suClass.setGlobalHashMap('_object_detector_mode', json.dumps(odm))
-        print(suClass.getGlobalHashMap('_object_detector_mode'))
+        # print(suClass.getGlobalHashMap('_object_detector_mode'))
         hashMap.put('info', str(odm))
-    print('Успешно вышли из  on_object_detected!!!')
-    print('Успешно вышли из  on_object_detected!!!')
     print('Успешно вышли из  on_object_detected!!!')
     return hashMap
 
