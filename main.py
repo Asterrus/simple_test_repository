@@ -36,6 +36,7 @@ def on_object_detected(hashMap,_files=None,_data=None):
         else:
             odm.append({'object_id': obj_id, 'mode': "ocr"})
         suClass.setGlobalHashMap('_object_detector_mode', json.dumps(odm))
+        print(suClass.getGlobalHashMap('_object_detector_mode'))
         hashMap.put('info', str(odm))
 
 
