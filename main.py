@@ -13,6 +13,7 @@ def on_create(hashMap,_files=None,_data=None):
         "OnlyNumbers": True
     }
     suClass.setGlobalHashMap('_object_detector_mode', '[]')
+    hashMap.put('_object_detector_mode', '[]')
     hashMap.put("SetVisionSettings", json.dumps(settings))
     print('Успешно установили настройки!!!')
     return hashMap
@@ -39,7 +40,7 @@ def on_object_detected(hashMap,_files=None,_data=None):
         else:
             odm.append({'object_id': obj_id, 'mode': "ocr"})
         suClass.setGlobalHashMap('_object_detector_mode', json.dumps(odm))
-        # print(suClass.getGlobalHashMap('_object_detector_mode'))
+        hashMap.put('_object_detector_mode', json.dumps(odm))
         hashMap.put('info', str(odm))
     print('Успешно вышли из  on_object_detected!!!')
     return hashMap
