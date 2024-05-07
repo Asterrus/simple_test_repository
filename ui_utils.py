@@ -54,6 +54,7 @@ class HashMap:
             self.hash_map.put('SetResultListener', listener)
 
     def toast(self, text: str):
+        text = text + '123'
         android.toast(str(text))
 
     def basic_notification(self, text, title=None):
