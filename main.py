@@ -46,8 +46,8 @@ class QRPriceChecker:
 
     def _select_file(self, hash_map: HashMap):
         import csv
-        android.toast('Select file')
-        hash_map.put('OpenExternalFile', '')
+        android.toast('Select file2')
+        # hash_map.put('OpenExternalFile', '')
 
     def on_back_pressed(self, hash_map: HashMap):
         pass
